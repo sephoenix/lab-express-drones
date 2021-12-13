@@ -40,8 +40,8 @@ router.get('/drones/:id/edit', (req, res, next) => {
   // ... your code here
   const {id} = req.params;
   Drone.findById(id)
-  .then((id)=>{
-    res.render('drones/update-form', {drone:id})
+  .then((droneUpdated)=>{
+    res.render('drones/update-form.hbs', {drone:droneUpdated})
   })
   .catch(error => next(error));
 });
